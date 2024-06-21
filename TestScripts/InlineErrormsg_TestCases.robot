@@ -65,5 +65,7 @@ InLine Error Message
 *** Keywords ***
 Failed Error Message
     Log    Mandatory field is empty
+    ${InLineERR}=    GetText    //div[@class\='slds-form-element__help']
+    Log              ${InLineERR}
 Success mandatory field message
     Log    Mandatory field have value
