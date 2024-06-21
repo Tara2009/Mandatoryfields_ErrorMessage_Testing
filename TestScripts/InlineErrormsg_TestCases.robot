@@ -44,3 +44,26 @@ Account Creation
     VerifyText         www.tvsh.com
 
     # End Account creation test case
+
+InLine Error Message
+    [Tags]             InLineErrmsg
+    [Documentation]    Testing InLine Error message for all Mandatory fields.
+    Appstate           Home
+    LaunchApp          Sales
+    ClickText          Accounts
+    ClickUntil         New Account                 New
+    UseModal           On
+    TypeText           Phone                       +7207207178
+    TypeText           Name                        ' '
+    TypeText           Website                     www.tvsh.com
+    ${NameInlineErrMSG}=     IsElement             //div[@class\='slds-form-element__help']
+    Log                      ${NameInlineErrMSG}
+    Run Keyword If           '${NameInlineErrMSG}'=='True'    Failed Error Message
+    ...                      ELSE                        Success mandatory field message
+    
+
+*** Keywords ***
+Failed Error Message
+    Log    Mandatory field is empty
+Success mandatory field message
+    Log    Mandatory field have value
