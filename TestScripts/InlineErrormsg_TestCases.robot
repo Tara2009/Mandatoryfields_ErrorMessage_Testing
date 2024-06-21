@@ -25,7 +25,7 @@ InLine Error Message
     Log                      ${NameInlineErrMSG}
     Run Keyword If           '${NameInlineErrMSG}'=='True'    Failed Error Message
     ...                      ELSE                        Success mandatory field message
-    
+    UseModal                 Off
 
 *** Keywords ***
 Failed Error Message
