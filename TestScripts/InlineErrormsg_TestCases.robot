@@ -9,8 +9,8 @@ Suite Setup            Setup Browser
 Suite Teardown         End suite
 
 *** Test Cases ***
-InLine Error Message before Click Save Button
-    [Tags]             InLineErrmsg
+InLine Error Message OnExist of field
+    [Tags]             InLineErrmsgOnExit
     [Documentation]    Testing InLine Error message for all Mandatory fields, before Click save button. Identify the mandatory fields are empty.
     Appstate           Home
     LaunchApp          Sales
@@ -27,8 +27,8 @@ InLine Error Message before Click Save Button
     ...                      ELSE                        Success mandatory field message
     UseModal                 Off
 
-InLine Error Message after Click Save Button
-    [Tags]             InLineErrmsg
+InLine Error Message OnClick Save Button
+    [Tags]             InLineErrmsgOnClk
     [Documentation]    Testing InLine Error message for all Mandatory fields, After Click save button. Identify the mandatory fields are empty.
     Appstate           Home
     LaunchApp          Sales
