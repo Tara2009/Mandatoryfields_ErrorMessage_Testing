@@ -18,8 +18,8 @@ InLine Error Message OnExist of field
     ClickUntil         New Account                 New
     UseModal           On
     TypeText           Phone                       +7207207178
-    TypeText           Website                     www.tvsh.com
     ClickText          Name
+    TypeText           Website                     www.tvsh.com
     #ClickText          Save                        partial_match=False
     ${NameInlineErrMSG}=     IsElement             //div[@class\='slds-form-element__help']
     Log                      ${NameInlineErrMSG}
