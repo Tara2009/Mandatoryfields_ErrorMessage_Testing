@@ -16,8 +16,8 @@ Account Creation
     ClickText          Accounts
     ClickUntil         New Account                 New
     UseModal           On
-    TypeText           Phone                       +7207207174
-    TypeText           Name                        tara siri Insurance45
+    TypeText           Phone                       +7207207178
+    TypeText           Name                        InLine Error Message Testing
     TypeText           Website                     www.tvsh.com
     VerifyText         Additional Information
     PickList           Type                        Prospect
@@ -39,8 +39,8 @@ Account Creation
     UseModal           Off
 
     ClickText          Details
-    VerifyText         tara siri Insurance45
-    VerifyText         +7207207174
+    VerifyText         InLine Error Message Testing
+    VerifyText         +7207207178
     VerifyText         www.tvsh.com
 
     # End Account creation test case
