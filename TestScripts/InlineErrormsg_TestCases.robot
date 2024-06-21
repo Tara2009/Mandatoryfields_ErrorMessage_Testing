@@ -9,9 +9,9 @@ Suite Setup            Setup Browser
 Suite Teardown         End suite
 
 *** Test Cases ***
-InLine Error Message
+InLine Error Message before Click Save Button
     [Tags]             InLineErrmsg
-    [Documentation]    Testing InLine Error message for all Mandatory fields.
+    [Documentation]    Testing InLine Error message for all Mandatory fields, before Click save button. Identify the mandatory fields are empty.
     Appstate           Home
     LaunchApp          Sales
     ClickText          Accounts
@@ -20,6 +20,23 @@ InLine Error Message
     TypeText           Phone                       +7207207178
     TypeText           Website                     www.tvsh.com
     ClickText          Name
+    ClickText          Save                        partial_match=False
+    ${NameInlineErrMSG}=     IsElement             //div[@class\='slds-form-element__help']
+    Log                      ${NameInlineErrMSG}
+    Run Keyword If           '${NameInlineErrMSG}'=='True'    Failed Error Message
+    ...                      ELSE                        Success mandatory field message
+    UseModal                 Off
+
+InLine Error Message after Click Save Button
+    [Tags]             InLineErrmsg
+    [Documentation]    Testing InLine Error message for all Mandatory fields, After Click save button. Identify the mandatory fields are empty.
+    Appstate           Home
+    LaunchApp          Sales
+    ClickText          Accounts
+    ClickUntil         New Account                 New
+    UseModal           On
+    TypeText           Phone                       +7207207178
+    TypeText           Website                     www.tvsh.com
     ClickText          Save                        partial_match=False
     ${NameInlineErrMSG}=     IsElement             //div[@class\='slds-form-element__help']
     Log                      ${NameInlineErrMSG}
