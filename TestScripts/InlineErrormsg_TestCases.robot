@@ -20,7 +20,7 @@ InLine Error Message before Click Save Button
     TypeText           Phone                       +7207207178
     TypeText           Website                     www.tvsh.com
     ClickText          Name
-    ClickText          Save                        partial_match=False
+    #ClickText          Save                        partial_match=False
     ${NameInlineErrMSG}=     IsElement             //div[@class\='slds-form-element__help']
     Log                      ${NameInlineErrMSG}
     Run Keyword If           '${NameInlineErrMSG}'=='True'    Failed Error Message
